@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Quản lí sinh viên</title>
+</head>
+<body>
+    <!-- navigationbar -->
+    <nav>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/departments">Department</a></li>
+            <li><a href="/notification">Notification</a></li>
+            <li><a href="/profile/<%=userLogin._id%>">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        <label id="icon">
+            <i class="fa fa-bars"></i>
+        </label>
+    </nav>
+
+    <!-- webbody -->
+    <div id="newNotification">
+        <a href='#' id="msg">Bạn có thông báo mới</a>
+    </div>
+    <div class="center">
+        
+        <!-- Search engine -->
+        <% if(locals.error){%>
+            <div class="errorMessage">
+              <p><%= error %></p>
+            </div>
+        <% }%>
+        <form id="Search" action="/students" method="POST">
+            <p>Tìm Kiếm Sinh Viên</p>
+            <input id="SearchBox" type="text" placeholder="Nhập tên hoặc MSSV..." name="search" value="<%=search%>">
+            <button class="btn" type="submit"><i class="fa fa-search"></i></button><br>
+        </form>
+
+        <!-- list -->
+        <h1 class="list-h1">Danh Sách Sinh Viên</h1>
+        <div id="list">
+            <!-- item-->
+            <% users.forEach(u => {%>
+            <div class="item">
+                <p class="item-title" ><%=u.name%></p>
+                <a href="/profile/<%=u._id%>">Trang cá nhân</a>
+                <hr>
+            </div>
+            <% }) %>
+            <!-- *******-->
+
+        </div>
+
+        <!-- Paginition-->
+        <div class="pagination" id="pagination">
+            <a href="javascript:prevPage()" id="btn_prev">&laquo;</a>
+            <span id="page" class="active">1</span>
+            <a href="javascript:nextPage()" id="btn_next">&raquo;</a>
+        </div>
+
+    </div>
+
+</body>
+<script type="text/javascript" src="../public/javascript/main.js" ></script>
+</html>

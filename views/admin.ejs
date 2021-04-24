@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="../public/javascript/main.js" ></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <!-- navigationbar -->
+    <nav>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/departments">Department</a></li>
+            <li><a href="/notification">Notification</a></li>
+            <li><a href="/profile/<%=userLogin._id%>">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        <label id="icon">
+            <i class="fa fa-bars"></i>
+        </label>
+    </nav>
+
+    <!-- webbody -->
+    <div id="newNotification">
+        <a href='#' id="msg">Bạn có thông báo mới</a>
+    </div>
+    <div class="center">
+        
+        <div id='dashboard'>
+            <h2>DASHBOARD</h2><hr>
+            <ul>
+                <li><a  href="/departments">Quản lí phòng khoa</a></li>
+                <li><a  href="/students">Quản lí sinh viên</a></li>
+                <li><a>Quản lí thông báo</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

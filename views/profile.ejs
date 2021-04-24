@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="../public/javascript/main.js" ></script>
+    <title>Trang cá nhân</title>
+</head>
+<body>
+    <!-- navigationbar -->
+    <nav>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/departments">Department</a></li>
+            <li><a href="/notification">Notification</a></li>
+            <li><a href="/profile/<%=userLogin._id%>">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        <label id="icon">
+            <i class="fa fa-bars"></i>
+        </label>
+    </nav>
+
+    <!-- webbody -->
+    <div id="newNotification">
+        <a href='#' id="msg">Bạn có thông báo mới</a>
+    </div>
+    <div class="center">
+
+        <div id="profile">
+            
+            <div id="avartar">
+                <h1>ẢNH ĐẠI DIỆN</h1>
+                <hr>
+                <img src="<%= userProfile.avatar %>" alt="avartar">
+            </div>
+
+            <div id="info">
+                <h1>THÔNG TIN</h1>
+                <hr>
+                <form>
+                    <span>Tên: </span><span><%=userProfile.name%></span><br>
+                    <span>Nick name: </span><span><%=userProfile.nickname%></span><br>
+
+                    <% if(userLogin.email===userProfile.email){%>
+                    <div class='edit-link' >
+                        <a href='/Edit'><%='Chỉnh sửa thông tin'%></a><br>
+                        <a href='/changePassword'><%='Đổi mật khẩu'%></a>
+                    </div>
+                    <%}%>
+                </form>
+                <% if(success){%>
+                    <div class="successMessage">
+                      <p><%= success %></p>
+                    </div>
+                <% }%>
+            </div>
+            
+           
+        </div>
+        
+        
+    </div>
+
+</body>
+</html>

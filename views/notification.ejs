@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Thông Báo</title>
+</head>
+<body>
+    <!-- navigationbar -->
+    <nav>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/departments">Department</a></li>
+            <li><a href="/notification">Notification</a></li>
+            <li><a href="/profile/<%=userLogin._id%>">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        <label id="icon">
+            <i class="fa fa-bars"></i>
+        </label>
+    </nav>
+
+    <!-- webbody -->
+    <div id="newNotification">
+        <a href='#' id="msg">Bạn có thông báo mới</a>
+    </div>
+    <div class="center">
+
+        <!-- Search engine -->
+        <% if(locals.error){%>
+            <div class="errorMessage">
+              <p><%= error %></p>
+            </div>
+        <% }%>
+        <form id="Search" action="/notification" method="POST">
+            <p>Tìm Kiếm Thông Báo</p>
+            <input id="SearchBox" type="text" placeholder="Nhập nội dung cần tìm.." name="search" value="<%=search%>">
+            <button class="btn" type="submit"><i class="fa fa-search"></i></button><br>
+
+            <label for="khoa">Tìm Theo Chuyên Mục:</label>
+            <select name="chuyenmuc" id="chuyenmuc">
+                <option value="" selected disabled hidden>Chọn Chuyên Mục</option>
+                <option value="CTHSSV">Phòng Công tác học sinh sinh viên</option>
+                <option value="PDH">Phòng Đại học</option>
+                <option value="PSDH">Phòng Sau đại học</option>
+                <option value="DTMT">Phòng điện toán và máy tính</option>
+                <option value="KTCL">Phòng khảo thí và kiểm định chất lượng</option>
+                <option value="TC">Phòng tài chính</option>
+                <option value="CLC">TDT Creative Language Center</option>
+                <option value="TH">Trung tâm tin học</option>
+                <option value="SDTC">Trung tâm đào tạo phát triển xã hội (SDTC)</option>
+                <option value="ATEM">Trung tâm phát triển Khoa học quản lý và Ứng dụng công nghệ (ATEM)</option>
+                <option value="KL">Trung tâm hợp tác doanh nghiệp và cựu sinh viênKhoa Luật</option>
+                <option value="ET">Trung tâm ngoại ngữ - tin học – bồi dưỡng văn hóa</option>
+                <option value="UEF">Viện chính sách kinh tế và kinh doanh</option>
+                <option value="MTCN">Khoa Mỹ thuật công nghiệp</option>
+                <option value="DDT">Khoa Điện – Điện tử</option>
+                <option value="IT">Khoa Công nghệ thông tin</option>
+                <option value="QTKD">Khoa Quản trị kinh doanh</option>
+                <option value="BHLD">Khoa Môi trường và bảo hộ lao động</option>
+                <option value="LDCD">Khoa Lao động công đoàn</option>
+                <option value="TCNH">Khoa Tài chính ngân hàng</option>
+                <option value="GDQT">Khoa giáo dục quốc tế</option>
+            </select><br><br>
+
+        </form>
+
+        <!-- Notification -->
+        <h1 class="list-h1">Danh Sách Thông Báo</h1>
+        <div id="list">
+            <!-- Notification element-->
+            <% notifications.forEach(n => {%>
+            <div class="item">
+                <p class="item-title"><%=n.title%></p>
+                <div class="subItem">
+                    <p>Ngày đăng: <%=n.date%></p>
+                    <p>Chuyên mục:<%=n.chuyenmuc%> </p>
+                </div>
+                <a href="/notification/<%=n._id%>">Chi tiết thông báo</a>
+                <hr>
+            </div>
+            <% }) %>
+            <!-- *******-->
+
+        </div>
+
+        <!-- Paginition-->
+        <div class="pagination" id="pagination">
+            <a href="javascript:prevPage()" id="btn_prev">&laquo;</a>
+            <span id="page" class="active">1</span>
+            <a href="javascript:nextPage()" id="btn_next">&raquo;</a>
+        </div>
+
+    </div>
+
+</body>
+<script type="text/javascript" src="../public/javascript/main.js" ></script>
+</html>

@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../public/javascript/main.js" ></script>
+    <title>Trang cá nhân</title>
+</head>
+<body>
+    <!-- navigationbar -->
+    <nav>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/departments">Department</a></li>
+            <li><a href="/notification">Notification</a></li>
+            <li><a href="/profile/<%=userLogin._id%>">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        <label id="icon">
+            <i class="fa fa-bars"></i>
+        </label>
+    </nav>
+
+    <!-- webbody -->
+    <div class="center">
+        <div id="edit">
+            <h2>Chỉnh Sửa Thông Tin</h2>
+            <form action="/edit" method="POST" enctype="multipart/form-data">
+                <label for="name">Tên hiển thị:</label><br>
+                <input type="text" name="name" value="<%=userLogin.nickname%>" ><br><br>
+                <label for="image">Ảnh đại diện:</label><br>
+                <input type="file" name="image"><br>
+                <button class="btn edit-btn">Submit</button>
+              </form> 
+              <% if(locals.errmsg){%>
+                <div class="errorMessage">
+                  <p><%= errmsg %></p>
+                </div>
+              <% }%>
+              
+        </div>
+        
+        
+    </div>
+
+</body>
+</html>

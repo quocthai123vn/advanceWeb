@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="../public/javascript/main.js" ></script>
+    </head>
+<body>
+    <!-- navigationbar -->
+    <nav>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/departments">Department</a></li>
+            <li><a href="/notification">Notification</a></li>
+            <li><a href="/profile/<%=userLogin._id%>">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        <label id="icon">
+            <i class="fa fa-bars"></i>
+        </label>
+    </nav>
+
+    <!-- webbody -->
+    <div id="newNotification">
+        <a href='#' id="msg">Bạn có thông báo mới</a>
+    </div>
+    <div class="center">
+        <!-- addpost -->
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <h1>Thêm Bài Viết Mới</h1>
+            <textarea class="status-input" name="status"placeholder=" Bạn có muốn đăng gì không?"></textarea><br>
+            <label for="image">Chọn hình ảnh:</label>
+            <input type="file" id="imgFile" name="image">
+            <button class="btn addbtn">Đăng</button>
+        </form>
+        <% if(locals.errmsg){%>
+        <div class="errorMessage">
+            <p><%= errmsg %></p>
+        </div>
+        <% }%>
+
+        <!-- post -->
+        <% posts.forEach(p => {%>
+        <div class="element">
+            <!-- avartar and name -->
+            <div class="media">
+                <img src="../public/image/Vycute.jpg" alt="avartar" >
+                <p><%= p.by %></p>
+            </div>
+            <!-- status and img -->
+            <div class="status">
+                <p><%= p.nd %></p>
+                <img class="img"  src="../public/image/Vycute.jpg" alt="postimg" >
+            </div>
+            <a href="/post">Xem chi tiết</a>
+        </div>
+        <% }) %>
+
+        <!-- *********************-->  
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Xác nhận xóa</p>
+            </div>
+        </div>
+  
+  </div>
+
+</div>
+
+</body>
+</html>

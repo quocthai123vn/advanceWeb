@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="975971136196-e5tfrtnuvhg454tlkvip9g81h05h6i5l.apps.googleusercontent.com">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../public/javascript/main.js" ></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Đăng Nhập</title>
+</head>
+<body id="loginPage">
+  <form id="login" action="/login" method="post">
+    <h1>LOGIN</h1>
+    <div id="loginBody">
+      <label for="email">Email:</label><br>
+      <input type="text" id="email" name="email" value="<%=email%>"><br><br>
+      <label for="pass">Password:</label><br>
+      <input type="password" id="pass" name="password"><br><br>
+      <button class="btn loginbtn">Login</button><br><br><hr>
+      <h4>Đăng ký bằng mail sinh viên:</h4>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    
+      
+      <% if(error){%>
+        <div class="errorMessage">
+          <p><%= error %></p>
+        </div>
+      <% }%>
+
+      <% if(success){%>
+        <div class="successMessage">
+          <p><%= success %></p>
+        </div>
+      <% }%>
+    </div>
+  </form> 
+</body>
+</html>

@@ -1,0 +1,699 @@
+*{
+    margin:0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    
+}
+
+body{
+    font-family: montserrat;
+}
+
+/* Navigation bar */
+nav{
+    height: 80px;
+    width: 100%;
+    background: #34495e;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    
+}
+
+
+nav ul{
+    float: right;
+    margin-right: 40px;
+}
+
+nav li{
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 80px;
+}
+
+nav a{
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 1px solid red transparent;
+    padding: 7px 10px;
+    border-radius: 3px;
+}
+
+a.active,a:hover{
+    border: 1px solid white;
+    transition:.5s;
+}
+
+nav #icon{
+    color: white;
+    font-size: 30px;
+    line-height: 80px;
+    float: right; 
+    margin-right: 15px;
+    margin-top: 25px;
+    cursor: pointer; 
+    display: none;
+}
+
+/* ************** */
+
+/* bodyweb */
+.center{
+    position: absolute;
+    left: 30%;
+    padding-top: 50px;
+    z-index: 1;
+}
+
+#newNotification{
+    
+    background-color: #3f9142;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 10px;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 0;
+    visibility: hidden;
+}
+
+#newNotification a{
+    color: #fff;
+    border: none;
+}
+#newNotification a:hover{
+    text-decoration: underline;
+}
+
+/* status post */
+.status-input{
+    width: 500px;
+    height: 100px;
+    resize:none;
+    font-size: 20px;
+}
+
+.btn{
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+.addbtn{
+    background-color: #4CAF50;
+    margin-left: 145px;
+    color: white;
+    
+}
+
+.addbtn:hover,.cmtbtn:hover{
+    background-color: rgb(32, 121, 35);
+}
+/* ********** */
+
+/* post */
+.element{
+    padding-top: 50px;
+    max-width: 500px;
+    margin-bottom: 10px;
+}
+.element a{
+    font-size: 18px;
+    margin-left: 340px;
+}
+/* media object */
+.media{
+    display: flex;
+}
+.media img{
+    border-radius: 50%;
+    width:50px;
+    height:50ppx;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+
+.media p{
+    margin-top:10px;
+    flex:1;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+/* ******* */
+
+.cmt .media p{
+    font-size: 25px;
+}
+
+.status{
+    padding-top: 5px;
+}
+
+.status p{
+    font-size: 25px;
+}
+
+.img{
+    max-width: 500px;
+    max-height: 500px;
+    padding-top: 5px;
+}
+
+/* comment box */
+.cmt-box{
+    border-style: groove;
+    border-radius: 5px;
+}
+
+/* comment object */
+.cmt{
+    padding-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.cmt-show{
+    margin-left: 50px;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.cmt-input{
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 450px;
+    height: 50px;
+    resize:none;
+    border-radius: 5px;
+    box-shadow: 2px 2px gray;
+    font-size: 18px;
+}
+
+.cmtbtn{
+    margin-left: 380px;
+    margin-top: 5px;
+    background-color:#4CAF50 ;
+    color: white;
+}
+
+
+/* ************* */
+
+#imgFile{
+    width: 180px;
+}
+
+.errorMessage{
+    color: red;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+}
+.successMessage{
+    color: green;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+#login .errorMessage{
+    margin-left: -50px;
+}
+
+/* ************** */
+
+/* Loginpage */
+
+#loginPage{
+    background-color: #2f3640;
+}
+
+#login{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    width: 380px;
+    height: 450px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 10px ;
+}
+#login h1{
+    text-decoration:underline;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 50px;
+    padding-bottom: 30px;
+}
+
+#login h4{
+    text-decoration:underline;
+}
+
+#loginBody{
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 20px;
+}
+
+#loginBody input{
+    height: 30px;
+    font-size: 20px;
+}
+
+
+.loginbtn{
+    background-color: #4CAF50;
+    color:white;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 120px;
+}
+
+.g-signin2{
+    margin-top: 10px;
+}
+
+.loginbtn:hover{
+    background-color: #3f9142 ;
+}
+
+@media(max-width:1024px)
+{
+    #login{
+        left: 25%;
+    }
+}
+
+@media(max-width:414px)
+{
+    #login{
+        left: 6%;
+        width: 340px;
+    }
+}
+
+@media(max-width:370px)
+{
+    #login{
+        left: 3%;
+        width: 340px;
+    }
+}
+
+
+/* ************** */
+
+/* Notification page */
+
+#Search p{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#Search label{
+    font-size: 20px;
+}
+
+
+#SearchBox{
+    width:300px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+#Search .btn{
+    background-color: #3193bd;
+    color: white;
+}
+
+#Search .btn:hover{
+    background-color: #267596;
+}
+
+#list{
+    margin-top: 60px;
+    width: 500px;
+    height: 100%;
+}
+
+#addDepartment{
+    font-size: 20px;
+}
+#addDepartment:hover{
+    text-decoration: underline;
+}
+
+
+.list-h1{
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.item-title{
+    text-align: left;
+    font-size: 25px;
+}
+
+.item a{
+    font-size: 20px;
+    font-style:italic;
+}
+
+.subItem{
+    font-size: 20px;
+    font-style: italic;
+}
+
+.pagination a,.pagination span {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .pagination span.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+  }
+
+/* ******** */
+
+/* details */
+#details{
+    width: 600px;
+}
+
+#details-infor span{
+    font-style: italic;
+    color: rgb(56, 56, 56);
+}
+
+#details-body{
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+#details-body ul{
+    margin-top: 30px;
+    border-style: ridge;
+    padding-left: 30px;
+    padding-top: 10px;
+    
+}
+
+
+#details-body li a:hover{
+    border: none;
+}
+
+/* *********** */
+
+/* profile page */
+#profile{
+    width: 700px;
+    display: flex;
+}
+
+#avartar img{
+    max-width: 350px;
+    max-height: 350px;
+    flex-shrink: 0;
+}
+
+#avartar hr{
+    margin-bottom: 14px;
+}
+
+#info{
+    margin-left: 50px;
+    flex:1;
+}
+
+#info span{
+    margin-top:15px;
+    font-size: 20px;
+}
+.edit-link{
+    margin-top:20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+/* ************* */
+
+/* edit page */
+
+#edit{
+    font-size: 20px;
+}
+.edit-btn{
+    background-color: #4CAF50;
+    margin-top:15px ;
+    color: white;
+}
+
+.edit-btn:hover{
+    background-color: #306d32;
+}
+
+#edit input,select{
+    width: 250px;
+    height: 30px;
+    font-size: 18px;
+}
+
+#checkbox input{
+    width: 15px;
+    height: 15px;
+}
+
+/* ************* */
+
+/* error page*/
+#error{
+    position: absolute;
+    top:40%;
+    left:30%;
+    right: 35px;
+}
+/* *********** */
+
+/* The Modal (background) */
+.modal {
+    display: none; 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0%;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+  }
+  .modal.show{
+    display: block;
+  }
+  .modal.hide{
+    display: none;
+}
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* ************************* */
+
+  /* admin page*/
+#dashboard{
+    font-size: 22px;
+}
+#dashboard li{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#dashboard li:hover{
+    text-decoration: underline;
+}
+/* *********** */
+
+/* responsive 1024 */
+@media(max-width:1024px)
+{
+    nav ul{
+        margin-right: 30px;
+    }
+    nav a{
+        font-size: 17px;
+    }
+
+    /* *********** */
+    .center{
+        position: absolute;
+        left: 10%;
+        padding-top: 50px;
+    }
+    
+    .element{
+        padding-top: 20px;
+    }
+}
+/* responsive 768 */
+@media(max-width:768px){
+    nav #icon{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: #2f3640;
+        top:80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav a{
+        font-size: 20px;
+    }
+
+    a.active,a:hover{
+        border: none;
+        color: #3498db;
+    }
+
+    nav ul.show{
+        left:0;
+    }
+
+    /* *********** */
+
+    .center{
+        position: absolute;
+        left: 10%;
+        padding-top: 50px;
+    }
+    #newNotification{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .status-input{
+        width: 250px;
+        height: 50px;
+        resize:none;
+        font-size: 15px;
+    }
+
+    .element{
+        max-width: 300px;
+    }
+    .element a{
+        margin-left: 170px;
+    }
+
+    .img{
+        max-width: 300px;
+        max-height: 300px;
+        padding-top: 5px;
+    }
+
+    .addbtn{
+        margin-left: 0px;
+        
+    }
+
+    .cmt-input{
+        width: 270px;
+    }
+
+    .cmtbtn{
+        margin-left: 200px;
+        margin-top: 5px;
+    }
+    /* *********** */
+
+    #SearchBox{
+        width: 200px;
+    }
+    #list{
+        width: 320px;
+    }
+
+    /* *********** */
+
+    #details{
+        width: 300px;
+    }
+
+    /* *********** */
+
+    #profile{
+        width: 250px;
+        display: block;
+    }
+
+    #avartar{
+        margin-bottom: 10px;
+    }
+
+    #info{
+        margin: 0;
+    }
+    
+    
+
+}
+/* *********** */
+
+
+
+

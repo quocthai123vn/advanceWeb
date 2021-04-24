@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="../public/javascript/main.js" ></script>
+    <title>Thông Báo</title>
+</head>
+<body>
+    <!-- navigationbar -->
+    <nav>
+        <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/departments">Department</a></li>
+            <li><a href="/notification">Notification</a></li>
+            <li><a href="/profile/<%=userLogin._id%>">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        <label id="icon">
+            <i class="fa fa-bars"></i>
+        </label>
+    </nav>
+
+    <!-- webbody -->
+    <div id="newNotification">
+        <a href='#' id="msg">Bạn có thông báo mới</a>
+    </div>
+    <div class="center">
+
+        <!-- post -->
+        <div class="element">
+            <!-- avartar and name -->
+            <div class="media">
+                <img src="../public/image/Vycute.jpg" alt="avartar" >
+                <p>Vycute</p>
+            </div>
+            <!-- status and img -->
+            <div class="status">
+                <p>Đang lướt Facebook thì thằng Phúc gọi đến nói rằng anh hai của
+                nó vừa mới bị tai nạn giao thông đang trong cơn nguy kịch, bệnh viện 
+                cũng đã trả về, nên nó phải cấp tốc về quê ngay với hy vọng có thể gặp mặt 
+                người anh nó lần cuối và nó có ý muốn rủ mình đi cùng. Phải nói mình có thằng 
+                bạn không chê vào đâu được, đám cưới, đám hỏi, sinh nhật những đám vui thì nó không 
+                rủ, đám buồn thì nó lại rủ.</p>
+                <img class="img"  src="../public/image/Vycute.jpg" alt="postimg" >
+            </div>
+            <!-- cmt -->
+            <div class="cmt-box">
+                <textarea class="cmt-input" name="cmt-input" placeholder="Bình luận của bạn."></textarea>
+                <button class="btn cmtbtn">Đăng</button>
+
+                <!-- cmt element -->
+                <div class="cmt">
+                    <div class="media">
+                        <img src="../public/image/Vycute.jpg" alt="avartar" >
+                        <p>Vycute</p>
+                    </div>
+                    <p class="cmt-show">Hay quá Vycute oi!!!</p>
+                    <hr>
+                </div>  
+
+                <div class="cmt">
+                    <div class="media">
+                        <img src="../public/image/Vycute.jpg" alt="avartar" >
+                        <p>Vycute</p>
+                    </div>
+                    <p class="cmt-show">Phải nói mình có thằng bạn không chê vào đâu đsdsdsdsdsdsdsược</p>
+                </div>  
+
+            </div>
+        </div>
+        <!-- *********************-->
+
+    </div>
+
+</body>
+</html>
